@@ -1,7 +1,7 @@
 ## Static Site Generator
 
 ## Proposed features
-1. **Generate HTML files from a datasource**
+1. **Generate HTML files from a data source**
 - The user should be able to automatically generate HTML files from a data source, like a markdown file, json, yaml ect. 
 
 - This should be accomplished by a cli command, like build 

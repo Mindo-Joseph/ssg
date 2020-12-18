@@ -7,9 +7,19 @@
   "license": "MIT",
   "scripts": {
     "start": "parcel index.html",
-    "build": "rm -fr .cache dist && parcel build index.html --public-url '.'"
+    "build": "rm -fr .cache dist && parcel build index.html --public-url '.'",
+    "make": "node ./src/index.js"
   },
   "devDependencies": {
+    "eslint": "^7.15.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-plugin-import": "^2.22.1",
     "parcel": "^1.12.4"
+  },
+  "dependencies": {
+    "front-matter": "^4.0.2",
+    "highlight.js": "^10.4.1",
+    "marked": "^1.2.7",
+    "node-json2html": "^1.4.0"
   }
 }
