@@ -4,12 +4,13 @@ const marked = require('./marked');
 const config = require('./config');
 
 const createPost = (postpath) => {
-  const data = fs.readFileSync(`${config.dev.postsdir}/${postpath}.md`,'utf-8');
+  const data = fs.readFileSync(`${config.dev.postsdir}/${postpath}.md`, 'utf-8');
   const content = fm(data);
   content.body = marked(content.body);
   content.path = postpath;
   return content;
 };
+
 const posthtml = (data) => `
 <!DOCTYPE html>
 <html lang="en">
@@ -25,7 +26,7 @@ const posthtml = (data) => `
         </header>
         <div class="content">
                 <h1>${data.attributes.title}</h1>
-            
+
             <p>${new Date().getFullYear()}</p>
             <hr />
             ${data.body}
@@ -40,7 +41,6 @@ const createPosts = (posts) => {
       posthtml(post),
       (e) => {
         if (e) throw (e);
-        console.log(`${post.path}/index.html was created successfully!`);
       },
     );
   });
